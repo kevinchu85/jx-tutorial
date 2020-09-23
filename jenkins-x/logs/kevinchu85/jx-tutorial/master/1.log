@@ -1,0 +1,93 @@
+
+Showing logs for build [32mkevinchu85-jx-tutorial-master-z8xc8-1[0m stage [32mfrom-build-pack[0m and container [32mcredential-initializer[0m
+{"level":"info","ts":1600868461.1584315,"caller":"creds-init/main.go:44","msg":"Credentials initialized."}
+
+Showing logs for build [32mkevinchu85-jx-tutorial-master-z8xc8-1[0m stage [32mfrom-build-pack[0m and container [32mworking-dir-initializer[0m
+
+Showing logs for build [32mkevinchu85-jx-tutorial-master-z8xc8-1[0m stage [32mfrom-build-pack[0m and container [32mplace-tools[0m
+
+Showing logs for build [32mkevinchu85-jx-tutorial-master-z8xc8-1[0m stage [32mfrom-build-pack[0m and container [32mstep-git-source-kevinchu85-jx-tutorial-master-z8xc8-2kfnj[0m
+{"level":"info","ts":1600868505.1537101,"caller":"git/git.go:105","msg":"Successfully cloned https://github.com/kevinchu85/**-tutorial.git @ v0.0.1 in path /workspace/source"}
+{"level":"warn","ts":1600868505.1684473,"caller":"git/git.go:152","msg":"Unexpected error: creating symlink: symlink /tekton/home/.ssh /root/.ssh: file exists"}
+{"level":"info","ts":1600868505.2446065,"caller":"git/git.go:133","msg":"Successfully initialized and updated submodules in path /workspace/source"}
+
+Showing logs for build [32mkevinchu85-jx-tutorial-master-z8xc8-1[0m stage [32mfrom-build-pack[0m and container [32mstep-setup-builder-home[0m
+
+Showing logs for build [32mkevinchu85-jx-tutorial-master-z8xc8-1[0m stage [32mfrom-build-pack[0m and container [32mstep-git-merge[0m
+Using SHAs from PULL_REFS=master:
+WARNING: no SHAs to merge, falling back to initial cloned commit
+
+Showing logs for build [32mkevinchu85-jx-tutorial-master-z8xc8-1[0m stage [32mfrom-build-pack[0m and container [32mstep-setup-jx-git-credentials[0m
+Generated Git credentials file /workspace/xdg_config/git/credentials
+
+Showing logs for build [32mkevinchu85-jx-tutorial-master-z8xc8-1[0m stage [32mfrom-build-pack[0m and container [32mstep-build-make-build[0m
+CGO_ENABLED=0 GO15VENDOREXPERIMENT=1 go build -ldflags '' -o bin/**-tutorial main.go
+
+Showing logs for build [32mkevinchu85-jx-tutorial-master-z8xc8-1[0m stage [32mfrom-build-pack[0m and container [32mstep-build-container-build[0m
+E0923 13:41:56.293969       8 aws_credentials.go:77] while getting AWS credentials NoCredentialProviders: no valid providers in chain. Deprecated.
+	For verbose messaging see aws.Config.CredentialsChainVerboseErrors
+[36mINFO[0m[0002] Using dockerignore file: /workspace/source/.dockerignore 
+[36mINFO[0m[0002] No base image, nothing to extract            
+[36mINFO[0m[0002] Built cross stage deps: map[]                
+[36mINFO[0m[0002] No base image, nothing to extract            
+[36mINFO[0m[0002] Executing 0 build triggers                   
+[36mINFO[0m[0002] cmd: EXPOSE                                  
+[36mINFO[0m[0002] Adding exposed port: 8080/tcp                
+[36mINFO[0m[0002] Checking for cached layer gcr.io/kong-test-project/cache:39746b66fcec7f104ada536d4385349eefdf94c93a3db5f795647cb3cb5554f3... 
+[36mINFO[0m[0003] No cached layer found for cmd COPY ./bin/ /  
+[36mINFO[0m[0003] Unpacking rootfs as cmd COPY ./bin/ / requires it. 
+[36mINFO[0m[0003] EXPOSE 8080                                  
+[36mINFO[0m[0003] cmd: EXPOSE                                  
+[36mINFO[0m[0003] Adding exposed port: 8080/tcp                
+[36mINFO[0m[0003] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0003] ENTRYPOINT ["/**-tutorial"]                  
+[36mINFO[0m[0003] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0003] COPY ./bin/ /                                
+[36mINFO[0m[0003] Resolving 2 paths                            
+[36mINFO[0m[0003] Taking snapshot of files...                  
+[36mINFO[0m[0004] Pushing layer gcr.io/kong-test-project/cache:39746b66fcec7f104ada536d4385349eefdf94c93a3db5f795647cb3cb5554f3 to cache now 
+
+Showing logs for build [32mkevinchu85-jx-tutorial-master-z8xc8-1[0m stage [32mfrom-build-pack[0m and container [32mstep-build-post-build[0m
+no CVE provider running in the current ** namespace so skip adding image to be analysed
+
+Showing logs for build [32mkevinchu85-jx-tutorial-master-z8xc8-1[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-changelog[0m
+Converted /workspace/source/charts/**-tutorial to an unshallow repository
+Generating change log from git ref cb60a347f742402139019df7191b363ee7dda771 => 88659c557e21986bcbc96766872c13e3426377a6
+Associating user jenkins-x-bot in users.jenkins.io with email jenkins-x@googlegroups.com to git GitProvider user with login jenkins-x-bot-0 as emails match
+Adding label jenkins.io/git-github-userid=jenkins-x-bot-0 to user jenkins-x-bot in users.jenkins.io
+Finding issues in commit messages using git format
+WARNING: No release found for kevinchu85/**-tutorial and tag v0.0.1 so creating a new release
+Updated the release information at https://github.com/kevinchu85/**-tutorial/releases/tag/v0.0.1
+generated: /workspace/source/charts/**-tutorial/templates/release.yaml
+Created Release **-tutorial-0-0-1 resource in namespace **
+Updating PipelineActivity kevinchu85-**-tutorial-master-1 with version 0.0.1
+Updated PipelineActivities kevinchu85-**-tutorial-master-1 with release notes URL: https://github.com/kevinchu85/**-tutorial/releases/tag/v0.0.1
+
+Showing logs for build [32mkevinchu85-jx-tutorial-master-z8xc8-1[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-helm-release[0m
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Adding missing Helm repo: storage.googleapis.com https://storage.googleapis.com/chartmuseum.jenkins-x.io
+Successfully added Helm repository storage.googleapis.com.
+Adding missing Helm repo: jenkins-x-chartmuseum http://jenkins-x-chartmuseum:8080
+Successfully added Helm repository jenkins-x-chartmuseum.
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Uploading chart file **-tutorial-0.0.1.tgz to http://jenkins-x-chartmuseum:8080/api/charts
+Received 201 response: {"saved":true}
+
+Showing logs for build [32mkevinchu85-jx-tutorial-master-z8xc8-1[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-jx-promote[0m
+WARNING: prow based install so skip waiting for the merge of Pull Requests to go green as currently there is an issue with gettingstatuses from the PR, see https://github.com/jenkins-x/**/issues/2410
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Promoting app **-tutorial version 0.0.1 to namespace **-staging
+WARNING: Waiting for the fork of *************/environment-cluster-1-staging to appear...
+Forked Git repository to https://github.com/*************/environment-cluster-1-staging
+Created Pull Request: https://github.com/jenkins-ecx-space/environment-cluster-1-staging/pull/1
+Added label updatebot to Pull Request https://github.com/jenkins-ecx-space/environment-cluster-1-staging/pull/1
+got git provider status pending from PR https://github.com/jenkins-ecx-space/environment-cluster-1-staging/pull/1
+got git provider status pending from PR https://github.com/jenkins-ecx-space/environment-cluster-1-staging/pull/1
+got git provider status pending from PR https://github.com/jenkins-ecx-space/environment-cluster-1-staging/pull/1
+got git provider status pending from PR https://github.com/jenkins-ecx-space/environment-cluster-1-staging/pull/1
+got git provider status pending from PR https://github.com/jenkins-ecx-space/environment-cluster-1-staging/pull/1
+got git provider status pending from PR https://github.com/jenkins-ecx-space/environment-cluster-1-staging/pull/1
+got git provider status pending from PR https://github.com/jenkins-ecx-space/environment-cluster-1-staging/pull/1
+Pull Request https://github.com/jenkins-ecx-space/environment-cluster-1-staging/pull/1 is merged at sha a165524f45d65a9c3446a20bc9cac0b74dd20227
+Pull Request merged but we are not waiting for the update pipeline to complete!
+WARNING: Could not find the service URL in namespace **-staging for names **-tutorial, **-**-tutorial, **-staging-**-tutorial
